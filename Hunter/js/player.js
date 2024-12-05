@@ -1,10 +1,12 @@
 class Player {
     constructor(game) {
         this.game = game;
-        this.x = 0;
+        this.x = 10;
         this.y = 60;
-        this.width = 100;
-        this.height = 100;
+        this.spriteWidth = 200;
+        this.spriteHeight = 200;
+        this.width;
+        this.height;
     }
 
     draw() {
@@ -12,6 +14,11 @@ class Player {
     }
 
     update() {
-        this.x++
+        this.x++;
+    }
+
+    resize() {
+        this.width = this.spriteWidth * this.game.ratio;
+        this.height = this.spriteHeight * this.game.ratio;
     }
 }
