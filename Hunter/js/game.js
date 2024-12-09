@@ -7,6 +7,7 @@ class Game {
         this.baseHeight = 720;
         this.ratio = this.height / this.baseHeight;
         this.player = new Player(this);
+        this.gravity;
         
         this.resize(window.innerWidth, window.innerHeight)
 
@@ -23,8 +24,8 @@ class Game {
         this.ctx.fillStyle = '#5995f2';
         this.ratio = this.height / this.baseHeight;
 
+        this.gravity = 0.15 * this.ratio;
         this.player.resize();
-        console.log(this.height, this.baseHeight, this.ratio);
     }
 
     render() {
@@ -49,4 +50,4 @@ window.addEventListener('load', function() {
 
     requestAnimationFrame(animate);
     
-})
+});
